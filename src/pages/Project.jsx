@@ -14,11 +14,11 @@ export default function Project() {
   const project = getProjectBySlug(slug);
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "auto",
+    const id = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
     });
-  }, []);
+    return () => cancelAnimationFrame(id);
+  }, [slug]);
 
   if (!project) {
     return (
@@ -47,6 +47,7 @@ export default function Project() {
 
   return (
     <section
+      key={slug}
       style={{
         background: "#0a0a0a",
         color: "#f5f0e8",

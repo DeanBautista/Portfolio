@@ -8,11 +8,25 @@ import { useEffect, useRef, useState } from "react";
  * @param {Object} opts
  * @param {number} opts.threshold - 0–1, how much of the element must be visible
  * @param {string} opts.rootMargin - shifts the trigger point (negative = trigger later)
+ * @param {*} opts.resetKey - when this value changes, isVisible resets to false
+ *   and the observer re-attaches. Pass something route-scoped (e.g. `pathname`
+ *   from useLocation) so reveals replay when navigating between pages that
+ *   reuse the same component instance (e.g. client-side route params).
  * @returns {[React.RefObject, boolean]} [ref, isVisible]
  */
-export function useScrollReveal({ threshold = 0.18, rootMargin = "0px 0px -10% 0px" } = {}) {
+export function useScrollReveal({
+  threshold = 0.18,
+  rootMargin = "0px 0px -10% 0px",
+  resetKey,
+} = {}) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  // Reset visibility whenever resetKey changes (e.g. route/slug change),
+  // so the element can animate in again instead of staying stuck visible.
+  useEffect(() => {
+    setIsVisible(false);
+  }, [resetKey]);
 
   useEffect(() => {
     const node = ref.current;
@@ -37,7 +51,7 @@ export function useScrollReveal({ threshold = 0.18, rootMargin = "0px 0px -10% 0
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [threshold, rootMargin]);
+  }, [threshold, rootMargin, resetKey]);
 
   return [ref, isVisible];
 }

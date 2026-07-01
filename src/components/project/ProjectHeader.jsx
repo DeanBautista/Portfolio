@@ -9,7 +9,7 @@ export default function ProjectHeader({ name, tags, description }) {
       <Reveal delay={0} y={12}>
         <button
           onClick={() => {
-            navigate("/home");
+            navigate(-1);
           }}
           style={{
             background: "none",

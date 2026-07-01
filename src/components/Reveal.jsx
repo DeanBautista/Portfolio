@@ -1,4 +1,5 @@
 import useScrollReveal from "../hooks/useScrollReveal";
+import { useLocation } from "react-router-dom";
 import "../animation.css";
 
 /**
@@ -20,7 +21,8 @@ export default function Reveal({
   threshold,
   rootMargin,
 }) {
-  const [ref, isVisible] = useScrollReveal({ threshold, rootMargin });
+  const { pathname } = useLocation();
+  const [ref, isVisible] = useScrollReveal({ threshold, rootMargin, resetKey: pathname });
 
   return (
     <Tag
