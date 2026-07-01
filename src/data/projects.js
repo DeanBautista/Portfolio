@@ -189,7 +189,7 @@ export const PROJECTS = [
       "Dynamic project showcase pulled from a central data source",
       "Dark/light mode support", // only if true
     ],
-    links: { demo: "https://yourportfolio.com", github: "https://github.com/DeanBautista/portfolio" },
+    links: { demo: "https://dpb-dev-seven.vercel.app/", github: "https://github.com/DeanBautista/portfolio" },
     images: [
       { src: portfolioHomePage, alt: "Portfolio homepage" },
       { src: portfolioProjectPage, alt: "Portfolio project detail page" },
