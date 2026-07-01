@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { PROJECTS, getProjectBySlug } from "../data/projects";
-import ProjectBreadcrumb from "../components/project/ProjectBreadcrumb";
 import ProjectHeader from "../components/project/ProjectHeader";
 import ProjectStats from "../components/project/ProjectStats";
 import ProjectGallery from "../components/project/ProjectGallery";

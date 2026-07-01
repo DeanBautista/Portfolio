@@ -129,7 +129,7 @@ export const PROJECTS = [
       "A professional social media platform designed for university students, enabling the sharing of official announcements, fostering campus engagement, and providing alumni tracking and networking capabilities.",
     stats: [
       { label: "Features", value: "50+" },
-      { label: "Role", value: "Full-stack developer" },
+      { label: "Role", value: "Full-Stack Developer" },
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [

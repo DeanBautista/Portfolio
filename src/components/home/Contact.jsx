@@ -101,7 +101,10 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-[#0a0a0a] px-6 py-16">
+    <section 
+      id="contact"
+      className="bg-[#0a0a0a] px-6 py-16"
+    >
       {/* Section heading */}
       <Reveal>
         <div className="flex items-baseline gap-3 mb-10">
