@@ -1,47 +1,116 @@
-/* ============================================================
-   Hero name reveal — slide up from clipped bottom + fade in
-   ============================================================
-   Usage:
-     Add overflow-hidden to the parent wrapper of each <h1>,
-     then apply the class to the <h1> itself.
+/* ==========================================================================
+   animation.css
+   All keyframe animations for the portfolio's hero entrance and
+   scroll-triggered reveals. Import once, e.g. in Hero.jsx / Reveal.jsx:
 
-     Line 1: animate-hero-reveal
-     Line 2: animate-hero-reveal [animation-delay: 80ms]  ← optional stagger
+     import "../../styles/animation.css";   (adjust path to where you place it)
 
-   Example (Tailwind + inline style):
-     <div className="overflow-hidden">
-       <h1 className="animate-hero-reveal">Dean Paolo</h1>
-     </div>
-     <div className="overflow-hidden">
-       <h1 className="animate-hero-reveal" style={{ animationDelay: "80ms" }}>
-         Bautista.
-       </h1>
-     </div>
-   ============================================================ */
+   Classes exposed:
+     .hero-line-wrap          wraps a hero name line, clips the mask panel
+     .hero-mask               solid panel covering a hero line pre-reveal
+     .hero-mask--active       triggers the wipe-away animation
+     .hero-fade-row           base state for the bottom info row
+     .hero-fade-row--active   triggers its fade/slide-up
+     .reveal                  base state for scroll-triggered elements
+     .reveal--visible         triggers fade + slide-up once visible
+   ========================================================================== */
 
-@keyframes heroReveal {
+/* ---------- Keyframes ---------- */
+
+@keyframes hero-mask-wipe {
   0% {
-    transform: translateY(55%);   /* start below the clip boundary */
-    opacity: 0.08;
-  }
-  60% {
-    opacity: 0.85;
+    transform: scaleX(1);
   }
   100% {
-    transform: translateY(0%);
-    opacity: 1;
+    transform: scaleX(0);
   }
 }
 
-.animate-hero-reveal {
-  animation: heroReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Respect reduced-motion preference */
+/* ---------- Hero: name lines (editorial mask-wipe) ----------
+   Each line is fully visible from the start. A solid #0a0a0a panel sits on
+   top of it, anchored to the right edge, and wipes away (scaleX 1 -> 0) to
+   reveal the text underneath — like a curtain pulling back. No opacity or
+   position change on the text itself, so it reads as controlled/intentional
+   rather than a generic fade or slide.
+*/
+
+.hero-line-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-mask {
+  position: absolute;
+  inset: 0;
+  background: #0a0a0a;
+  transform-origin: right center;
+  transform: scaleX(1);
+  pointer-events: none;
+}
+
+.hero-mask--active {
+  animation: hero-mask-wipe 0.85s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+  /* animation-delay set per-line inline via style={{ animationDelay }}
+     since each line needs a different stagger offset */
+}
+
+/* ---------- Hero: bottom info row (tagline + terminal) ---------- */
+
+.hero-fade-row {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 1050ms;
+}
+
+.hero-fade-row--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Scroll-triggered reveal (Skills / Projects / Contact) ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Reduced motion ---------- */
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-hero-reveal {
-    animation: none;
-    opacity: 1;
-    transform: none;
+  .hero-mask,
+  .hero-mask--active {
+    animation: none !important;
+    transform: scaleX(0) !important;
+  }
+
+  .hero-fade-row,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../../animation.css";
 
 const COMMANDS = [
   "git push origin main",
@@ -35,18 +36,15 @@ function TerminalTyper() {
         }, TYPING_SPEED);
         return () => clearTimeout(timeout);
       } else {
-        // Finished typing — pause before backspacing
         setIsPaused(true);
       }
     } else {
-      // Backspacing
       if (displayed.length > 0) {
         const timeout = setTimeout(() => {
           setDisplayed(displayed.slice(0, -1));
         }, BACKSPACE_SPEED);
         return () => clearTimeout(timeout);
       } else {
-        // Finished backspacing — move to next command
         const timeout = setTimeout(() => {
           setCmdIndex((i) => (i + 1) % COMMANDS.length);
           setIsTyping(true);
@@ -64,41 +62,68 @@ function TerminalTyper() {
   );
 }
 
+/**
+ * HeroLine
+ * One line of the name block, revealed via an editorial mask-wipe: the text
+ * is fully in place from the start, and a solid panel covering it wipes away
+ * left-to-right (anchored right, scaleX 1 -> 0) like a curtain pulling back.
+ * `delayMs` staggers each line so they land one after another.
+ */
+function HeroLine({ children, delayMs, active, outline = false, textClassName = "" }) {
+  return (
+    <div className="hero-line-wrap">
+      <h1
+        className={`font-black uppercase leading-none tracking-tight text-[clamp(3rem,13vw,11rem)] text-left ${textClassName}`}
+        style={{
+          fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
+          ...(outline
+            ? { color: "transparent", WebkitTextStroke: "2px #f5f0e8" }
+            : { color: "#f5f0e8" }),
+        }}
+      >
+        {children}
+      </h1>
+
+      {/* Mask panel — covers the line, then wipes away to reveal it */}
+      <span
+        aria-hidden="true"
+        className={`hero-mask ${active ? "hero-mask--active" : ""}`}
+        style={{ animationDelay: active ? `${delayMs}ms` : undefined }}
+      />
+    </div>
+  );
+}
+
 export default function Hero() {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    // Small tick so the initial (hidden) state paints before we flip to active —
+    // guarantees the transition actually runs instead of snapping in.
+    const t = setTimeout(() => setActive(true), 60);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <section className="bg-[#0a0a0a] flex flex-col min-h-[calc(100vh-94px)]">
       {/* Name block */}
       <div className="flex flex-col px-6 justify-center flex-1">
+        <HeroLine delayMs={100} active={active}>
+          Dean Paolo
+        </HeroLine>
 
-        {/* Clip wrapper — hides DEAN PAOLO below until animated in */}
-        <div className="overflow-hidden">
-          <h1
-            className="animate-hero-reveal font-black uppercase leading-none tracking-tight text-[clamp(3rem,13vw,11rem)] text-[#f5f0e8] text-left"
-            style={{ fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif" }}
-          >
-            Dean Paolo
-          </h1>
-        </div>
-
-        {/* Clip wrapper — hides BAUTISTA. below until animated in */}
-        <div className="overflow-hidden mt-1 md:mt-0">
-          <h1
-            className="animate-hero-reveal font-black uppercase leading-none tracking-tight text-[clamp(3rem,13vw,11rem)] text-left"
-            style={{
-              fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
-              color: "transparent",
-              WebkitTextStroke: "2px #f5f0e8",
-            }}
-          >
+        <div className="mt-1 md:mt-0">
+          <HeroLine delayMs={280} active={active} outline>
             <span className="hidden md:inline">Bautista.</span>
             <span className="inline md:hidden">Bautista</span>
-          </h1>
+          </HeroLine>
         </div>
-
       </div>
 
-      {/* Bottom info row — border bleeds full width */}
-      <div className="border-t border-b border-white/10">
+      {/* Bottom info row — fades/slides in after the name has landed */}
+      <div
+        className={`hero-fade-row border-t border-b border-white/10 ${active ? "hero-fade-row--active" : ""}`}
+      >
         <div className="flex flex-col md:flex-row md:items-start">
 
           {/* Tagline — left half */}
