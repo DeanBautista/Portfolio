@@ -10,14 +10,14 @@ import flavor_find_9 from "../assets/flavor_find/flavor_find_9.jpeg"
 import flavor_find_10 from "../assets/flavor_find/flavor_find_10.jpeg"
 
 import devblog_1 from "../assets/devblog/devblog_1.jpeg"
-import devblog_2 from "../assets/devblog/devblog_1.jpeg"
-import devblog_3 from "../assets/devblog/devblog_1.jpeg"
-import devblog_4 from "../assets/devblog/devblog_1.jpeg"
-import devblog_5 from "../assets/devblog/devblog_1.jpeg"
-import devblog_6 from "../assets/devblog/devblog_1.jpeg"
-import devblog_7 from "../assets/devblog/devblog_1.jpeg"
-import devblog_8 from "../assets/devblog/devblog_1.jpeg"
-import devblog_9 from "../assets/devblog/devblog_1.jpeg"
+import devblog_2 from "../assets/devblog/devblog_2.jpeg"
+import devblog_3 from "../assets/devblog/devblog_3.png"
+import devblog_4 from "../assets/devblog/devblog_4.png"
+import devblog_5 from "../assets/devblog/devblog_5.jpeg"
+import devblog_6 from "../assets/devblog/devblog_6.png"
+import devblog_7 from "../assets/devblog/devblog_7.jpeg"
+import devblog_8 from "../assets/devblog/devblog_8.jpeg"
+import devblog_9 from "../assets/devblog/devblog_9.jpeg"
 
 import atmos_1 from "../assets/atmos/atmos_1.jpeg"
 
@@ -40,6 +40,9 @@ import accountCreation from "../assets/bulsu_space/super_admin_account_creation.
 import communityAccess from "../assets/bulsu_space/super_admin_community_access.png"
 import notification from "../assets/bulsu_space/super_admin_notification.png"
 import postReports from "../assets/bulsu_space/super_admin_post_reports.png"
+
+import portfolioHomePage from "../assets/portfolio/homepage.png"
+import portfolioProjectPage from "../assets/portfolio/project_page.jpeg"
 
 export const PROJECTS = [
   {
@@ -165,14 +168,42 @@ export const PROJECTS = [
     ],
   },
   {
+    slug: "portfolio",
+    name: ["My", "Portfolio"], // or ["Portfolio"] like Atmos
+    tags: ["React.js", "Tailwind CSS", "Vite", "Framer Motion", "Vercel"], // match your real stack
+    description:
+      "A personal portfolio site showcasing my projects, skills, and experience, built with a focus on smooth animations and responsive design.",
+    stats: [
+      // { label: "Timeline", value: "e.g. 2 weeks" },
+      { label: "Role", value: "Solo Developer" },
+      { label: "Status", value: "Live", accent: true },
+    ],
+    stack: [
+      { layer: "Frontend", tech: "React.js · Tailwind CSS" },
+      { layer: "Animation", tech: "Framer Motion" }, // if you used it
+      { layer: "Tools", tech: "Vite · Vercel" },
+    ],
+    highlights: [
+      "Responsive layout across all screen sizes",
+      "Smooth page transitions and scroll animations",
+      "Dynamic project showcase pulled from a central data source",
+      "Dark/light mode support", // only if true
+    ],
+    links: { demo: "https://yourportfolio.com", github: "https://github.com/DeanBautista/portfolio" },
+    images: [
+      { src: portfolioHomePage, alt: "Portfolio homepage" },
+      { src: portfolioProjectPage, alt: "Portfolio project detail page" },
+    ],
+  },
+  {
     slug: "atmos",
     name: ["Atmos"],
     tags: ["HTML", "CSS", "Javascript", "Vercel", "REST APIs"],
     description:
       "A responsive weather application that delivers real-time weather data and forecasts using a RESTful weather API.",
     stats: [
-      { label: "Timeline", value: "—" },
-      { label: "Role", value: "—" },
+  
+      { label: "Role", value: "Solo Developer" },
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [

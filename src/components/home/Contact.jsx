@@ -28,7 +28,7 @@ const SOCIAL_LINKS = [
   },
 ];
 
-const EMAIL = "deanpaolo.bautista@gmailapp.com";
+const EMAIL = "deanpaolo.bautista@gmail.com";
 
 function TerminalLine() {
   const text = 'echo "Let\'s build something."';

@@ -99,7 +99,10 @@ const STAGGER_CAP = 10; // resets stagger every 10 cells (roughly 2 rows on desk
 
 export default function Skills() {
   return (
-    <section className="bg-[#0a0a0a] px-6 py-16">
+    <section 
+      className="bg-[#0a0a0a] px-6 py-16"
+      id="skills"
+    >
       {/* Section heading */}
       <Reveal>
         <div className="flex items-baseline gap-3 mb-10">

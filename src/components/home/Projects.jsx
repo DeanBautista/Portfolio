@@ -6,7 +6,10 @@ export default function Projects() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#0a0a0a] px-6 py-20 border-white/10 border-t">
+    <section 
+      className="bg-[#0a0a0a] px-6 py-20 border-white/10 border-t"
+      id="projects"
+    >
       {/* Section heading */}
       <Reveal>
         <div className="flex items-baseline gap-3 mb-10">

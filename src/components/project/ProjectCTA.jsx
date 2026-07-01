@@ -12,7 +12,7 @@ export default function ProjectCTA({ links, onNext }) {
         gap: 12,
       }}
     >
-      <Reveal delay={0} y={14}>
+      <Reveal delay={0} y={14} threshold={0} rootMargin="0px">
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           <a
             href={links.demo}
@@ -62,7 +62,7 @@ export default function ProjectCTA({ links, onNext }) {
         </div>
       </Reveal>
 
-      <Reveal delay={80} y={14}>
+      <Reveal delay={80} y={14} threshold={0} rootMargin="0px">
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <button
             onClick={onNext}
