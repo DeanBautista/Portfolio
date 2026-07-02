@@ -124,7 +124,7 @@ export const PROJECTS = [
   {
     slug: "bulsuspace",
     name: ["Bulsu", "Space"],
-    tags: ["React.js", "Tailwind CSS", "Firebase Auth", "Firestore", "Cloud Functions", "REST APIs"],
+    tags: ["React.js", "Tailwind CSS", "Typescript", "Firebase Auth", "Firestore", "Cloud Functions", "REST APIs"],
     description:
       "A professional social media platform designed for university students, enabling the sharing of official announcements, fostering campus engagement, and providing alumni tracking and networking capabilities.",
     stats: [
@@ -133,7 +133,7 @@ export const PROJECTS = [
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [
-      { layer: "Frontend", tech: "React.js · Tailwind CSS" },
+      { layer: "Frontend", tech: "React.js · Typescript · Tailwind CSS" },
       { layer: "Backend", tech: "Firebase Auth · Cloud Functions · Express.js" },
       { layer: "Database", tech: "Firestore · Realtime Database" },
       { layer: "Tools", tech: "Cloud Storage · Firebase Hosting · Cloud Messaging (FCM)" },
