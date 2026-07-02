@@ -2,44 +2,20 @@ import Reveal from "../Reveal";
 
 export default function ProjectHighlights({ highlights }) {
   return (
-    <div style={{ padding: 24 }}>
+    <div className="p-6">
       <Reveal delay={0} y={14}>
-        <div
-          style={{
-            fontSize: 10,
-            fontFamily: "'Courier New', monospace",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            color: "rgba(245,240,232,0.4)",
-            marginBottom: 16,
-          }}
-        >
+        <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f5f0e8]/40">
           Highlights
         </div>
       </Reveal>
-      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <div className="flex flex-col gap-2.5">
         {highlights.map((h, i) => (
           <Reveal key={h} delay={80 + i * 60} y={12}>
-            <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-              <span
-                style={{
-                  color: "#a8e63d",
-                  fontSize: 12,
-                  fontFamily: "'Courier New', monospace",
-                  marginTop: 1,
-                  flexShrink: 0,
-                }}
-              >
+            <div className="flex items-start gap-2.5">
+              <span className="mt-px flex-shrink-0 font-mono text-xs text-[#a8e63d]">
                 →
               </span>
-              <span
-                style={{
-                  fontSize: 12,
-                  fontFamily: "'Courier New', monospace",
-                  color: "rgba(245,240,232,0.7)",
-                  lineHeight: 1.5,
-                }}
-              >
+              <span className="font-mono text-xs leading-[1.5] text-[#f5f0e8]/70">
                 {h}
               </span>
             </div>

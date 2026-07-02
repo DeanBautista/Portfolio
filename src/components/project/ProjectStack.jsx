@@ -2,59 +2,26 @@ import Reveal from "../Reveal";
 
 export default function ProjectStack({ stack }) {
   return (
-    <div style={{ padding: 24, borderRight: "1px solid rgba(255,255,255,0.1)" }}>
+    <div className="border-r border-white/10 p-6">
       <Reveal delay={0} y={14}>
-        <div
-          style={{
-            fontSize: 10,
-            fontFamily: "'Courier New', monospace",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            color: "rgba(245,240,232,0.4)",
-            marginBottom: 16,
-          }}
-        >
+        <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f5f0e8]/40">
           Stack
         </div>
       </Reveal>
-      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <div className="flex flex-col gap-2.5">
         {stack.map((s, i) => (
           <Reveal key={s.layer} delay={80 + i * 60} y={12}>
             <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Courier New', monospace",
-                    fontSize: 12,
-                    color: "rgba(245,240,232,0.5)",
-                  }}
-                >
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs text-[#f5f0e8]/50">
                   {s.layer}
                 </span>
-                <span
-                  style={{
-                    fontFamily: "'Courier New', monospace",
-                    fontSize: 12,
-                    color: "#f5f0e8",
-                  }}
-                >
+                <span className="font-mono text-xs text-[#f5f0e8]">
                   {s.tech}
                 </span>
               </div>
               {i < stack.length - 1 && (
-                <div
-                  style={{
-                    height: 1,
-                    background: "rgba(255,255,255,0.06)",
-                    marginTop: 10,
-                  }}
-                />
+                <div className="mt-2.5 h-px bg-white/[0.06]" />
               )}
             </div>
           </Reveal>

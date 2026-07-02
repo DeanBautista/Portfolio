@@ -19,52 +19,20 @@ export default function ProjectGallery({ images }) {
     setLightbox((i) => (i + 1) % images.length);
 
   return (
-    <div style={{ padding: "28px 24px" }}>
-      <div style={{ maxWidth: 900, margin: "0 auto", position: "relative" }}>
+    <div className="px-6 py-7">
+      <div className="relative mx-auto max-w-[900px]">
         {/* ── Hero image ── */}
         <Reveal delay={0} y={20}>
           <div
             onClick={() => setLightbox(active)}
-            style={{
-              width: "100%",
-              aspectRatio: "16/7",
-              overflow: "hidden",
-              cursor: "zoom-in",
-              borderRadius: 6,
-              border: "1px solid rgba(255,255,255,0.08)",
-              background: "#111",
-              position: "relative",
-            }}
+            className="relative w-full aspect-[16/7] overflow-hidden cursor-zoom-in rounded-md border border-white/[0.08] bg-[#111]"
           >
             <img
               src={hero.src}
               alt={hero.alt}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "top",
-                display: "block",
-                transition: "transform 0.3s ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              className="block w-full h-full object-cover object-top transition-transform duration-300 ease-in-out hover:scale-[1.02]"
             />
-            <div
-              style={{
-                position: "absolute",
-                bottom: 12,
-                right: 12,
-                background: "rgba(0,0,0,0.6)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: 2,
-                padding: "3px 9px",
-                fontFamily: "'Courier New', monospace",
-                fontSize: 10,
-                color: "rgba(245,240,232,0.6)",
-                letterSpacing: "0.1em",
-              }}
-            >
+            <div className="absolute bottom-3 right-3 rounded-sm border border-white/[0.12] bg-black/60 px-[9px] py-[3px] font-mono text-[10px] tracking-[0.1em] text-[#f5f0e8]/60">
               {active + 1} / {images.length}
             </div>
           </div>
@@ -72,14 +40,7 @@ export default function ProjectGallery({ images }) {
 
         {/* ── Thumbnails row ── */}
         {images.length > 1 && (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(5, 1fr)",
-              gap: 6,
-              marginTop: 6,
-            }}
-          >
+          <div className="mt-1.5 grid grid-cols-5 gap-1.5">
             {visibleThumbs.map((img, i) => {
               const realIdx = i + 1;
               const isActive = active === realIdx;
@@ -89,38 +50,20 @@ export default function ProjectGallery({ images }) {
                     onClick={() => {
                       setLightbox(realIdx); // ← opens the modal at THIS image's index
                     }}
-                    style={{
-                      aspectRatio: "16/9",
-                      overflow: "hidden",
-                      cursor: "pointer",
-                      borderRadius: 4,
-                      border: isActive
-                        ? "1px solid #a8e63d"
-                        : "1px solid rgba(255,255,255,0.07)",
-                      background: "#111",
-                      outline: isActive ? "1px solid rgba(168,230,61,0.3)" : "none",
-                      outlineOffset: 1,
-                      transition: "border-color 0.15s",
-                      position: "relative",
-                    }}
+                    className={`relative aspect-video overflow-hidden cursor-pointer rounded transition-colors duration-150 ${
+                      isActive
+                        ? "border border-[#a8e63d] outline outline-1 outline-[#a8e63d]/30 outline-offset-1"
+                        : "border border-white/[0.07] outline-none"
+                    } bg-[#111]`}
                   >
                     <img
                       src={img.src}
                       alt={img.alt}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        display: "block",
-                        opacity: isActive ? 1 : 0.55,
-                        transition: "opacity 0.15s",
-                      }}
-                      onMouseEnter={(e) => {
-                        if (!isActive) e.currentTarget.style.opacity = "0.85";
-                      }}
-                      onMouseLeave={(e) => {
-                        if (!isActive) e.currentTarget.style.opacity = "0.55";
-                      }}
+                      className={`block w-full h-full object-cover transition-opacity duration-150 ${
+                        isActive
+                          ? "opacity-100"
+                          : "opacity-55 hover:opacity-85"
+                      }`}
                     />
                   </div>
                 </Reveal>
@@ -132,57 +75,18 @@ export default function ProjectGallery({ images }) {
               <Reveal delay={100 + visibleThumbs.length * 60} y={14}>
                 <div
                   onClick={() => setLightbox(THUMB_LIMIT + 1)}
-                  style={{
-                    aspectRatio: "16/9",
-                    borderRadius: 4,
-                    border: "1px solid rgba(255,255,255,0.07)",
-                    background: "#111",
-                    cursor: "pointer",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 4,
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
+                  className="relative aspect-video overflow-hidden rounded border border-white/[0.07] bg-[#111] cursor-pointer flex flex-col items-center justify-center gap-1"
                 >
                   <img
                     src={images[THUMB_LIMIT + 1]?.src}
                     alt=""
                     aria-hidden
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      opacity: 0.15,
-                      filter: "blur(2px)",
-                    }}
+                    className="absolute inset-0 w-full h-full object-cover opacity-15 blur-[2px]"
                   />
-                  <span
-                    style={{
-                      position: "relative",
-                      fontFamily: "'Arial Black', sans-serif",
-                      fontSize: 20,
-                      fontWeight: 900,
-                      color: "#f5f0e8",
-                      lineHeight: 1,
-                    }}
-                  >
+                  <span className="relative font-['Arial_Black',sans-serif] text-xl font-black leading-none text-[#f5f0e8]">
                     +{overflow}
                   </span>
-                  <span
-                    style={{
-                      position: "relative",
-                      fontFamily: "'Courier New', monospace",
-                      fontSize: 9,
-                      letterSpacing: "0.15em",
-                      textTransform: "uppercase",
-                      color: "rgba(245,240,232,0.4)",
-                    }}
-                  >
+                  <span className="relative font-mono text-[9px] tracking-[0.15em] uppercase text-[#f5f0e8]/40">
                     more
                   </span>
                 </div>
@@ -195,97 +99,39 @@ export default function ProjectGallery({ images }) {
         {lightbox !== null && (
           <div
             onClick={closeLightbox}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.92)",
-              zIndex: 999,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/[0.92]"
           >
             <button
               onClick={(e) => { e.stopPropagation(); prevLight(); }}
-              style={{
-                position: "absolute",
-                left: 24,
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: 2,
-                color: "#f5f0e8",
-                fontFamily: "'Courier New', monospace",
-                fontSize: 18,
-                padding: "10px 16px",
-                cursor: "pointer",
-              }}
+              className="absolute left-6 rounded-sm border border-white/[0.12] bg-white/[0.06] px-4 py-2.5 font-mono text-lg text-[#f5f0e8] cursor-pointer"
             >
               ←
             </button>
 
             <div
               onClick={(e) => e.stopPropagation()}
-              style={{ maxWidth: "80vw", maxHeight: "80vh" }}
+              className="max-w-[80vw] max-h-[80vh]"
             >
               <img
                 src={images[lightbox].src}
                 alt={images[lightbox].alt}
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "80vh",
-                  objectFit: "contain",
-                  display: "block",
-                  borderRadius: 4,
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
+                className="block max-w-full max-h-[80vh] rounded border border-white/10 object-contain"
               />
-              <div
-                style={{
-                  marginTop: 12,
-                  fontFamily: "'Courier New', monospace",
-                  fontSize: 11,
-                  color: "rgba(245,240,232,0.4)",
-                  letterSpacing: "0.08em",
-                  textAlign: "center",
-                }}
-              >
+              <div className="mt-3 text-center font-mono text-[11px] tracking-[0.08em] text-[#f5f0e8]/40">
                 {images[lightbox].alt} — {lightbox + 1} / {images.length}
               </div>
             </div>
 
             <button
               onClick={(e) => { e.stopPropagation(); nextLight(); }}
-              style={{
-                position: "absolute",
-                right: 24,
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: 2,
-                color: "#f5f0e8",
-                fontFamily: "'Courier New', monospace",
-                fontSize: 18,
-                padding: "10px 16px",
-                cursor: "pointer",
-              }}
+              className="absolute right-6 rounded-sm border border-white/[0.12] bg-white/[0.06] px-4 py-2.5 font-mono text-lg text-[#f5f0e8] cursor-pointer"
             >
               →
             </button>
 
             <button
               onClick={closeLightbox}
-              style={{
-                position: "absolute",
-                top: 20,
-                right: 24,
-                background: "none",
-                border: "none",
-                color: "rgba(245,240,232,0.4)",
-                fontFamily: "'Courier New', monospace",
-                fontSize: 13,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                cursor: "pointer",
-              }}
+              className="absolute top-5 right-6 border-none bg-transparent font-mono text-[13px] uppercase tracking-[0.1em] text-[#f5f0e8]/40 cursor-pointer"
             >
               esc ✕
             </button>

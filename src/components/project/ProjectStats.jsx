@@ -2,70 +2,33 @@ import Reveal from "../Reveal";
 
 export default function ProjectStats({ stats }) {
   return (
-    <div
-      style={{
-        borderTop: "1px solid rgba(255,255,255,0.1)",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        marginTop: 32,
-      }}
-    >
+    <div className="mt-8 border-y border-white/10">
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${stats.length}, 1fr)`,
-        }}
+        className="grid"
+        style={{ gridTemplateColumns: `repeat(${stats.length}, 1fr)` }}
       >
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 70} y={14}>
             <div
-              style={{
-                padding: "20px 24px",
-                borderRight:
-                  i < stats.length - 1
-                    ? "1px solid rgba(255,255,255,0.1)"
-                    : "none",
-              }}
+              className={`px-6 py-5 ${
+                i < stats.length - 1 ? "border-r border-white/10" : ""
+              }`}
             >
-              <div
-                style={{
-                  fontSize: 10,
-                  fontFamily: "'Courier New', monospace",
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  color: "rgba(245,240,232,0.4)",
-                  marginBottom: 6,
-                }}
-              >
+              <div className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-[#f5f0e8]/40">
                 {s.label}
               </div>
               {s.accent ? (
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <span
-                    style={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      background: "#a8e63d",
-                      display: "inline-block",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontSize: 15,
-                      fontWeight: 900,
-                      color: "#a8e63d",
-                    }}
-                  >
+                <div className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-[#a8e63d]" />
+                  <span className="text-[15px] font-black text-[#a8e63d]">
                     {s.value}
                   </span>
                 </div>
               ) : (
                 <div
+                  className="font-black leading-none text-[#f5f0e8]"
                   style={{
                     fontSize: s.value.length > 5 ? 15 : 22,
-                    fontWeight: 900,
-                    color: "#f5f0e8",
-                    lineHeight: 1,
                     paddingTop: s.value.length > 5 ? 4 : 0,
                   }}
                 >

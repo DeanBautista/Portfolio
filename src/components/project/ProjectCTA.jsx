@@ -2,60 +2,23 @@ import Reveal from "../Reveal";
 
 export default function ProjectCTA({ links, onNext }) {
   return (
-    <div
-      style={{
-        padding: "20px 24px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        gap: 12,
-      }}
-    >
+    <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-5">
       <Reveal delay={0} y={14} threshold={0} rootMargin="0px">
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <div className="flex flex-wrap gap-2.5">
           <a
             href={links.demo}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "11px 22px",
-              fontSize: 12,
-              fontFamily: "'Courier New', monospace",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              borderRadius: 2,
-              background: "#a8e63d",
-              border: "1px solid #a8e63d",
-              color: "#0a0a0a",
-              fontWeight: 900,
-              textDecoration: "none",
-            }}
             target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-[2px] border border-[#a8e63d] bg-[#a8e63d] px-[22px] py-[11px] font-mono text-xs font-black uppercase tracking-[0.1em] text-[#0a0a0a] no-underline"
           >
             ↗ Live Demo
           </a>
+
           <a
             href={links.github}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "11px 22px",
-              fontSize: 12,
-              fontFamily: "'Courier New', monospace",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              borderRadius: 2,
-              background: "transparent",
-              border: "1px solid rgba(245,240,232,0.3)",
-              color: "#f5f0e8",
-              textDecoration: "none",
-            }}
             target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-[2px] border border-white/30 bg-transparent px-[22px] py-[11px] font-mono text-xs uppercase tracking-[0.1em] text-[#f5f0e8] no-underline"
           >
             GitHub ↗
           </a>
@@ -63,23 +26,10 @@ export default function ProjectCTA({ links, onNext }) {
       </Reveal>
 
       <Reveal delay={80} y={14} threshold={0} rootMargin="0px">
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={onNext}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "9px 16px",
-              fontSize: 11,
-              fontFamily: "'Courier New', monospace",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              borderRadius: 2,
-              background: "transparent",
-              border: "1px solid rgba(245,240,232,0.3)",
-              color: "#f5f0e8",
-            }}
+            className="inline-flex cursor-pointer items-center rounded-[2px] border border-white/30 bg-transparent px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.1em] text-[#f5f0e8]"
           >
             Next project →
           </button>

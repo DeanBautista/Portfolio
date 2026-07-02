@@ -69,26 +69,39 @@ function TerminalTyper() {
  * left-to-right (anchored right, scaleX 1 -> 0) like a curtain pulling back.
  * `delayMs` staggers each line so they land one after another.
  */
-function HeroLine({ children, delayMs, active, outline = false, textClassName = "" }) {
+function HeroLine({
+  children,
+  delayMs,
+  active,
+  outline = false,
+  textClassName = "",
+}) {
   return (
     <div className="hero-line-wrap">
       <h1
-        className={`font-black uppercase leading-none tracking-tight text-[clamp(3rem,13vw,11rem)] text-left ${textClassName}`}
-        style={{
-          fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
-          ...(outline
-            ? { color: "transparent", WebkitTextStroke: "2px #f5f0e8" }
-            : { color: "#f5f0e8" }),
-        }}
+        className={`
+          text-left
+          text-[clamp(3rem,13vw,11rem)]
+          font-black
+          uppercase
+          leading-none
+          tracking-tight
+          font-['Arial_Black','Helvetica_Neue',Arial,sans-serif]
+          ${
+            outline
+              ? "text-transparent [-webkit-text-stroke:2px_#f5f0e8]"
+              : "text-[#f5f0e8]"
+          }
+          ${textClassName}
+        `}
       >
         {children}
       </h1>
 
-      {/* Mask panel — covers the line, then wipes away to reveal it */}
       <span
         aria-hidden="true"
         className={`hero-mask ${active ? "hero-mask--active" : ""}`}
-        style={{ animationDelay: active ? `${delayMs}ms` : undefined }}
+        style={active ? { animationDelay: `${delayMs}ms` } : undefined}
       />
     </div>
   );

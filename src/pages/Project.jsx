@@ -17,27 +17,28 @@ export default function Project() {
     const id = requestAnimationFrame(() => {
       window.scrollTo({ top: 0, behavior: "auto" });
     });
+
     return () => cancelAnimationFrame(id);
   }, [slug]);
 
   if (!project) {
     return (
-      <section
-        style={{
-          background: "#0a0a0a",
-          color: "#f5f0e8",
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <section className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-[#f5f0e8]">
         <button onClick={() => navigate("/home")}>← Back home</button>
       </section>
     );
   }
 
-  const { name, tags, description, stats, stack, highlights, links, images } = project;
+  const {
+    name,
+    tags,
+    description,
+    stats,
+    stack,
+    highlights,
+    links,
+    images,
+  } = project;
 
   const currentIndex = PROJECTS.findIndex((p) => p.slug === slug);
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
@@ -48,29 +49,26 @@ export default function Project() {
   return (
     <section
       key={slug}
-      style={{
-        background: "#0a0a0a",
-        color: "#f5f0e8",
-        fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
-        minHeight: "100vh",
-      }}
+      className="min-h-screen bg-[#0a0a0a] font-['Arial_Black','Helvetica_Neue',Arial,sans-serif] text-[#f5f0e8]"
     >
       {/* <ProjectBreadcrumb onBack={onBack} name={name} /> */}
-      <ProjectHeader name={name} tags={tags} description={description} />
+
+      <ProjectHeader
+        name={name}
+        tags={tags}
+        description={description}
+      />
+
       <ProjectStats stats={stats} />
+
       <ProjectGallery images={images} />
 
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            borderBottom: "1px solid rgba(255,255,255,0.1)",
-          }}
-        >
+      <div className="border-t border-white/10">
+        <div className="grid grid-cols-2 border-b border-white/10">
           <ProjectStack stack={stack} />
           <ProjectHighlights highlights={highlights} />
         </div>
+
         <ProjectCTA links={links} onNext={onNext} />
       </div>
     </section>

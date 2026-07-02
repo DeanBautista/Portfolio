@@ -1,51 +1,23 @@
 export default function ProjectBreadcrumb({ onBack, name }) {
   return (
-    <div
-      style={{
-        padding: "16px 24px",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-      }}
-    >
+    <div className="flex items-center gap-2.5 border-b border-white/10 px-6 py-4">
       <button
         onClick={onBack}
-        style={{
-          background: "none",
-          border: "none",
-          color: "rgba(245,240,232,0.4)",
-          fontFamily: "'Courier New', monospace",
-          fontSize: 11,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          cursor: "pointer",
-          padding: 0,
-        }}
+        className="cursor-pointer p-0 font-mono text-[11px] uppercase tracking-[0.1em] text-[#f5f0e8]/40"
       >
         ← Back
       </button>
-      <span style={{ color: "rgba(255,255,255,0.15)", fontSize: 11 }}>/</span>
-      <span
-        style={{
-          fontFamily: "'Courier New', monospace",
-          fontSize: 11,
-          letterSpacing: "0.08em",
-          color: "rgba(245,240,232,0.4)",
-        }}
-      >
+
+      <span className="text-[11px] text-white/15">/</span>
+
+      <span className="font-mono text-[11px] tracking-[0.08em] text-[#f5f0e8]/40">
         Projects
       </span>
-      <span style={{ color: "rgba(255,255,255,0.15)", fontSize: 11 }}>/</span>
-      <span
-        style={{
-          fontFamily: "'Courier New', monospace",
-          fontSize: 11,
-          letterSpacing: "0.08em",
-          color: "#a8e63d",
-        }}
-      >
-        {name.join("")}
+
+      <span className="text-[11px] text-white/15">/</span>
+
+      <span className="font-mono text-[11px] tracking-[0.08em] text-[#a8e63d]">
+        {Array.isArray(name) ? name.join("") : name}
       </span>
     </div>
   );
