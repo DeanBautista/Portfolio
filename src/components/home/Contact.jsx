@@ -4,28 +4,16 @@ import Reveal from "../Reveal";
 const SOCIAL_LINKS = [
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/DeanBautista",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     invert: true,
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/",
+    url: "https://www.linkedin.com/in/dean-paolo-bautista-6145083ba/",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
     invert: false,
-  },
-  {
-    name: "Telegram",
-    url: "https://t.me/",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
-    invert: true,
-  },
-  {
-    name: "Discord",
-    url: "https://discord.com/",
-    icon: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg",
-    invert: true,
-  },
+  }
 ];
 
 const EMAIL = "deanpaolo.bautista@gmail.com";
