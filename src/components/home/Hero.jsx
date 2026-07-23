@@ -139,10 +139,12 @@ export default function Hero() {
               <LinkedinIcon />
             </a>
             <a
-              href="mailto:you@example.com"
-              aria-label="Email"
-              className="text-[#f5f0e8]/60 hover:text-[#a8e63d] transition-colors"
-            >
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=deanpaolo.bautista@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email"
+                className="text-[#f5f0e8]/60 hover:text-[#a8e63d] transition-colors"
+              >
               <MailIcon />
             </a>
           </div>
