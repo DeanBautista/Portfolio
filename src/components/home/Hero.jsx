@@ -109,10 +109,10 @@ export default function Hero() {
             </span>
             <p className="text-[#f5f0e8]/80 text-base lg:text-lg leading-relaxed">
               {/* TODO: swap in real bio copy */}
-              Full-stack developer who takes products from a blank schema
-              to a live deploy — React and Node on the surface, Postgres
-              and CI pipelines underneath. Favors clear systems over
-              clever ones, and ships things that are boring to maintain.
+              Full-stack developer who takes products from a blank schema to a live deploy
+              React and Node, PHP and Laravel, SQL and MongoDB. Built secure authentication systems, 
+              role-based access control, AI-integrated tools, and the UIs that bring them together, 
+              through an internship, a capstone project, and independent apps.
             </p>
           </Reveal>
 
