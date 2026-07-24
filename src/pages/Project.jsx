@@ -69,7 +69,7 @@ export default function Project() {
           <ProjectHighlights highlights={highlights} />
         </div>
 
-        <ProjectCTA links={links} onNext={onNext} />
+        <ProjectCTA links={links} onNext={onNext} slug={slug} />
       </div>
     </section>
   );

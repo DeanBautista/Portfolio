@@ -35,7 +35,6 @@ import space1 from "../assets/bulsu_space/space_1.png"
 import space2 from "../assets/bulsu_space/space_2.png"
 import normalChat from "../assets/bulsu_space/normal_chat.png"
 import groupChat from "../assets/bulsu_space/group_chat.png"
-
 import accountCreation from "../assets/bulsu_space/super_admin_account_creation.png"
 import communityAccess from "../assets/bulsu_space/super_admin_community_access.png"
 import notification from "../assets/bulsu_space/super_admin_notification.png"
@@ -44,7 +43,60 @@ import postReports from "../assets/bulsu_space/super_admin_post_reports.png"
 import portfolioHomePage from "../assets/portfolio/homepage.png"
 import portfolioProjectPage from "../assets/portfolio/project_page.jpeg"
 
+import resumatchHome from "../assets/resumatch/home.png"
+import loading from "../assets/resumatch/loading.png"
+import result1 from "../assets/resumatch/result1.png"
+import result2 from "../assets/resumatch/result2.png"
+import result3 from "../assets/resumatch/result3.png"
+
+
 export const PROJECTS = [
+  {
+    slug: "bulsuspace",
+    name: ["Bulsu", "Space"],
+    tags: ["React.js", "Tailwind CSS", "Typescript", "Firebase Auth", "Firestore", "Cloud Functions", "REST APIs"],
+    description:
+      "A professional social media platform designed for university students, enabling the sharing of official announcements, fostering campus engagement, and providing alumni tracking and networking capabilities.",
+    stats: [
+      { label: "Features", value: "50+" },
+      { label: "Role", value: "Full-Stack Developer" },
+      { label: "Status", value: "Live", accent: true },
+    ],
+    stack: [
+      { layer: "Frontend", tech: "React.js · Typescript · Tailwind CSS" },
+      { layer: "Backend", tech: "Firebase Auth · Cloud Functions · Express.js" },
+      { layer: "Database", tech: "Firestore · Realtime Database" },
+      { layer: "Tools", tech: "Cloud Storage · Firebase Hosting · Cloud Messaging (FCM)" },
+    ],
+    highlights: [
+      "9 distinct account roles with tailored permissions, including role-based account creation by super admins and admins",
+      "Posts, announcements, and short-form video (Flares), with likes, shares, comments, and content filtering",
+      "Group/space creation with member posting, interactions, and admin moderation tools",
+      "Direct messaging with 1-on-1 and group chat support",
+      "Event creation and management",
+      "Platform-wide moderation and security, including content/account moderation and MFA",
+    ],
+    links: { demo: "https://bulsuspace.web.app/", github: "" },
+    images: [
+      { src: home, alt: "BulsuSpace homepage" },
+      { src: nineRoles, alt: "BulsuSpace user roles" },
+      { src: mfa, alt: "Multi-factor authentication" },
+      { src: normalPost, alt: "BulsuSpace normal post" },
+      { src: announcementPost, alt: "BulsuSpace announcement post" },
+      { src: sharePost, alt: "BulsuSpace share post" },
+      { src: postInteraction, alt: "BulsuSpace post interaction" },
+      { src: profilePage, alt: "BulsuSpace profile page" },
+      { src: eventPage, alt: "BulsuSpace event page" },
+      { src: space1, alt: "BulsuSpace community space 1" },
+      { src: space2, alt: "BulsuSpace community space 2" },
+      { src: normalChat, alt: "BulsuSpace private chat" },
+      { src: groupChat, alt: "BulsuSpace group chat" },
+      { src: accountCreation, alt: "BulsuSpace super admin account creation" },
+      { src: communityAccess, alt: "BulsuSpace super admin community access" },
+      { src: notification, alt: "BulsuSpace super admin notifications" },
+      { src: postReports, alt: "BulsuSpace super admin post reports" },
+    ],
+  },
   {
     slug: "flavorfind",
     name: ["Flavor", "Find"],
@@ -86,6 +138,39 @@ export const PROJECTS = [
     ],
   },
   {
+    slug: "resumatch",
+    name: ["Resu", "Match"],
+    tags: ["PHP", "Javascript", "MySQL", "OAuth", "Groq A.I API", "Gemini A.I API", "Puppeteer"],
+    description:
+      "An AI-powered resume screening tool that scans and compares uploaded resumes/CVs against a job description, scoring the match and generating a downloadable results report.",
+    stats: [
+      { label: "Features", value: "10+" },
+      { label: "Role", value: "Solo Full-Stack Developer" },
+      { label: "Status", value: "Live", accent: true },
+    ],
+    stack: [
+      { layer: "Frontend", tech: "PHP · HTML · CSS · JavaScript" },
+      { layer: "Backend", tech: "PHP" },
+      { layer: "Database", tech: "MySQL" },
+      { layer: "AI/Auth", tech: "Groq AI API · Gemini AI API · OAuth" },
+      { layer: "Tools", tech: "Puppeteer" },
+    ],
+    highlights: [
+      "Upload and parse resumes/CVs against a target job description",
+      "AI-driven matching and scoring via Groq and Gemini APIs",
+      "OAuth-based user authentication",
+      "Downloadable match results/report",
+    ],
+    links: { demo: "https://resumatch.cu.ma/", github: "https://github.com/DeanBautista/ResuMatch" },
+    images: [
+      { src: resumatchHome, alt: "ResuMatch overview" },
+      { src: loading, alt: "ResuMatch scanning/loading state" },
+      { src: result1, alt: "ResuMatch results — match score" },
+      { src: result2, alt: "ResuMatch results — details" },
+      { src: result3, alt: "ResuMatch results — downloadable report" },
+    ],
+  },
+  {
     slug: "devblog",
     name: ["Dev", "Blog"],
     tags: ["React.js", "Zustand", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Cloudinary", "JWT Auth", "Planet Scale", "REST APIs"],
@@ -119,52 +204,6 @@ export const PROJECTS = [
       { src: devblog_7, alt: "DevBlog overview" },
       { src: devblog_8, alt: "DevBlog overview" },
       { src: devblog_9, alt: "DevBlog overview" },
-    ],
-  },
-  {
-    slug: "bulsuspace",
-    name: ["Bulsu", "Space"],
-    tags: ["React.js", "Tailwind CSS", "Typescript", "Firebase Auth", "Firestore", "Cloud Functions", "REST APIs"],
-    description:
-      "A professional social media platform designed for university students, enabling the sharing of official announcements, fostering campus engagement, and providing alumni tracking and networking capabilities.",
-    stats: [
-      { label: "Features", value: "50+" },
-      { label: "Role", value: "Full-Stack Developer" },
-      { label: "Status", value: "Live", accent: true },
-    ],
-    stack: [
-      { layer: "Frontend", tech: "React.js · Typescript · Tailwind CSS" },
-      { layer: "Backend", tech: "Firebase Auth · Cloud Functions · Express.js" },
-      { layer: "Database", tech: "Firestore · Realtime Database" },
-      { layer: "Tools", tech: "Cloud Storage · Firebase Hosting · Cloud Messaging (FCM)" },
-    ],
-    highlights: [
-      "9 distinct account roles with tailored permissions, including role-based account creation by super admins and admins",
-      "Posts, announcements, and short-form video (Flares), with likes, shares, comments, and content filtering",
-      "Group/space creation with member posting, interactions, and admin moderation tools",
-      "Direct messaging with 1-on-1 and group chat support",
-      "Event creation and management",
-      "Platform-wide moderation and security, including content/account moderation and MFA",
-    ],
-    links: { demo: "https://bulsuspace.web.app/", github: "https://github.com/DeanBautista/Bulsu-Space" },
-    images: [
-      { src: home, alt: "BulsuSpace homepage" },
-      { src: nineRoles, alt: "BulsuSpace user roles" },
-      { src: mfa, alt: "Multi-factor authentication" },
-      { src: normalPost, alt: "BulsuSpace normal post" },
-      { src: announcementPost, alt: "BulsuSpace announcement post" },
-      { src: sharePost, alt: "BulsuSpace share post" },
-      { src: postInteraction, alt: "BulsuSpace post interaction" },
-      { src: profilePage, alt: "BulsuSpace profile page" },
-      { src: eventPage, alt: "BulsuSpace event page" },
-      { src: space1, alt: "BulsuSpace community space 1" },
-      { src: space2, alt: "BulsuSpace community space 2" },
-      { src: normalChat, alt: "BulsuSpace private chat" },
-      { src: groupChat, alt: "BulsuSpace group chat" },
-      { src: accountCreation, alt: "BulsuSpace super admin account creation" },
-      { src: communityAccess, alt: "BulsuSpace super admin community access" },
-      { src: notification, alt: "BulsuSpace super admin notifications" },
-      { src: postReports, alt: "BulsuSpace super admin post reports" },
     ],
   },
   {
