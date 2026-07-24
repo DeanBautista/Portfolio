@@ -120,16 +120,16 @@ export default function Contact() {
               </p>
               <button
                 onClick={handleCopy}
-                className="group flex items-center gap-3 text-left"
+                className="group flex flex-wrap items-center gap-x-3 gap-y-1 text-left w-full"
                 aria-label="Copy email address"
               >
                 <span
-                  className="text-[#f5f0e8] font-black text-xl tracking-tight group-hover:text-[#a8e63d] transition-colors duration-200"
+                  className="text-[#f5f0e8] font-black text-xl tracking-tight group-hover:text-[#a8e63d] transition-colors duration-200 break-all"
                   style={{ fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif" }}
                 >
                   {EMAIL}
                 </span>
-                <span className="text-[#f5f0e8]/20 group-hover:text-[#a8e63d]/60 font-mono text-xs transition-colors duration-200">
+                <span className="text-[#f5f0e8]/20 group-hover:text-[#a8e63d]/60 font-mono text-xs transition-colors duration-200 shrink-0">
                   {copied ? "copied!" : "copy"}
                 </span>
               </button>
