@@ -10,7 +10,7 @@ export default function Projects() {
       className="bg-[#0a0a0a] px-6 py-20 border-white/10 border-t"
       id="projects"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-screen-2xl mx-auto">
         {/* Section heading */}
         <Reveal>
           <div className="flex items-baseline gap-3 mb-10">

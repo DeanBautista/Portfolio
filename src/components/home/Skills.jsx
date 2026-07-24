@@ -111,7 +111,7 @@ const STAGGER_CAP = 10; // resets stagger every 10 cells (roughly 2 rows on desk
 export default function Skills() {
   return (
     <section 
-      className="bg-[#0a0a0a] px-6 py-16 w-full max-w-7xl mx-auto"
+      className="bg-[#0a0a0a] px-6 py-16 w-full max-w-screen-2xl mx-auto"
       id="skills"
     >
       {/* Section heading */}

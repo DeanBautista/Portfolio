@@ -87,7 +87,7 @@ export default function Hero() {
   return (
     <section className="bg-[#0a0a0a] flex flex-col min-h-[calc(100vh-94px)] border-b border-white/10">
       {/* lg:gap-15 xl:gap-40 */}
-      <div className="flex-1 min-h-0 max-w-7xl grid grid-cols-1 gap-5 content-center lg:content-center lg:grid-cols-[1.35fr_1fr] lg:mx-auto lg:gap-15 xl:grid-cols-[minmax(auto,1fr)_minmax(auto,1fr)] xl:gap-16 xl:mx-auto">
+      <div className="flex-1 min-h-0 max-w-screen-2xl grid grid-cols-1 gap-5 content-center lg:content-center lg:grid-cols-[1.35fr_1fr] lg:mx-auto lg:gap-15 xl:grid-cols-[minmax(auto,1fr)_minmax(auto,1fr)] xl:gap-16 xl:mx-auto">
         {/* Left — name, bio, quick facts. On mobile/tablet this comes AFTER the
             portrait (order-2); on desktop it's back on the left (lg:order-1). */}
         <div className="order-2 lg:order-1 flex flex-col items-center text-center justify-start gap-4 lg:gap-8 px-6 pt-0 pb-14 lg:py-10 lg:items-start lg:justify-center lg:text-left">
