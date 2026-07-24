@@ -2,7 +2,7 @@ import Reveal from "../Reveal";
 
 export default function ProjectStats({ stats }) {
   return (
-    <div className="mt-8 border-y border-white/10">
+    <div className="mt-8 border-y border-white/10 max-w-[1900px] mx-auto">
       <div
         className="grid"
         style={{ gridTemplateColumns: `repeat(${stats.length}, 1fr)` }}

@@ -91,7 +91,7 @@ export default function Contact() {
   return (
     <section 
       id="contact"
-      className="bg-[#0a0a0a] px-6 py-16 w-full max-w-screen-2xl mx-auto"
+      className="bg-[#0a0a0a] px-6 py-16 w-full max-w-[1900px] mx-auto"
     >
       {/* Section heading */}
       <Reveal>

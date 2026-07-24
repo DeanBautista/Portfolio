@@ -6,7 +6,7 @@ import pmes2 from "../../assets/pdo/pmes-2.png"
 
 // Example shape — adjust to match your actual data source
 const EXPERIENCE = {
-  role: "Software Developer",
+  role: "Software Developer Intern",
   company: "Bulacan State University Planning and Development Office",
   period: "January 2026 — April 2026",
   location: "Malolos, Bulacan",
@@ -32,7 +32,7 @@ export default function Experience() {
       className="bg-[#0a0a0a] px-6 py-20 border-white/10 border-t"
       id="experience"
     >
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-[1900px] mx-auto">
         {/* Section heading */}
         <Reveal>
           <div className="flex items-baseline gap-3 mb-10">

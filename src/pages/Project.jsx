@@ -63,7 +63,7 @@ export default function Project() {
 
       <ProjectGallery images={images} />
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 max-w-[1900px] mx-auto">
         <div className="grid grid-cols-2 border-b border-white/10">
           <ProjectStack stack={stack} />
           <ProjectHighlights highlights={highlights} />

@@ -5,7 +5,7 @@ export default function ProjectHeader({ name, tags, description }) {
   const navigate = useNavigate();
 
   return (
-    <div className="px-6 pt-10">
+    <div className="px-6 pt-10 max-w-[1900px] mx-auto">
       <Reveal delay={0} y={12}>
         <button
           onClick={() => {
