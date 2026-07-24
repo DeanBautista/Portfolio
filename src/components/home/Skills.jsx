@@ -22,6 +22,10 @@ const SKILLS = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   {
+    name: "Zustand",
+    icon: "https://cdn.simpleicons.org/zustand/443E38",
+  },
+  {
     name: "Node.js",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
   },
@@ -52,6 +56,14 @@ const SKILLS = [
   {
     name: "Firebase",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+  },
+  {
+    name: "Cloudinary",
+    icon: "https://cdn.simpleicons.org/cloudinary/3448C5",
+  },
+  {
+    name: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
   {
     name: "Git",
@@ -90,7 +102,6 @@ const SKILLS = [
     icon: "https://cdn.simpleicons.org/claude/D97757",
   },
 ];
-
 // Stagger step (ms) between each cell. Capped via modulo so the last
 // cells in a long grid don't end up waiting seconds after the section
 // is already fully in view.

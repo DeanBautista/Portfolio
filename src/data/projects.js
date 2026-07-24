@@ -54,7 +54,7 @@ export const PROJECTS = [
   {
     slug: "bulsuspace",
     name: ["Bulsu", "Space"],
-    tags: ["React.js", "Tailwind CSS", "Typescript", "Firebase Auth", "Firestore", "Cloud Functions", "REST APIs"],
+    tags: ["React.js", "Tailwind CSS", "Typescript", "Firebase Auth", "Firestore", "Cloud Functions", "Cloud Storage", "Cloud Messaging (FCM)", "REST APIs", "Azure"],
     description:
       "A professional social media platform designed for university students, enabling the sharing of official announcements, fostering campus engagement, and providing alumni tracking and networking capabilities.",
     stats: [
@@ -64,9 +64,9 @@ export const PROJECTS = [
     ],
     stack: [
       { layer: "Frontend", tech: "React.js · Typescript · Tailwind CSS" },
-      { layer: "Backend", tech: "Firebase Auth · Cloud Functions · Express.js" },
+      { layer: "Backend", tech: "Firebase Auth · Cloud Functions · Express.js · REST APIs" },
       { layer: "Database", tech: "Firestore · Realtime Database" },
-      { layer: "Tools", tech: "Cloud Storage · Firebase Hosting · Cloud Messaging (FCM)" },
+      { layer: "Tools", tech: "Cloud Storage · Firebase Hosting · Cloud Messaging (FCM) · Azure" },
     ],
     highlights: [
       "9 distinct account roles with tailored permissions, including role-based account creation by super admins and admins",
@@ -103,15 +103,14 @@ export const PROJECTS = [
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind", "Cloudinary", "JWT Auth", "REST APIs"],
     description:
       "A recipe discovery platform with intelligent ingredient-based search, user collections, and real-time cooking timers. Built with a React frontend and a RESTful Node.js API.",
-    // TODO: fill these in with real details — placeholders for now
     stats: [
       { label: "Features", value: "20+" },
-      { label: "Role", value: "Solo Full-Stack Developer" },
+      { label: "Role", value: "Full-Stack Developer" },
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [
       { layer: "Frontend", tech: "React.js · Tailwind CSS" },
-      { layer: "Backend", tech: "Node.js · Express.js" },
+      { layer: "Backend", tech: "Node.js · Express.js · REST APIs" },
       { layer: "Database", tech: "MongoDB" },
       { layer: "Tools", tech: "Cloudinary · Vercel" },
     ],
@@ -138,19 +137,55 @@ export const PROJECTS = [
     ],
   },
   {
+    slug: "devblog",
+    name: ["Dev", "Blog"],
+    tags: ["React.js", "Zustand", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Cloudinary", "JWT Auth", "Planet Scale", "REST APIs"],
+    description:
+      "A personal CMS blog platform with an admin dashboard for creating, managing, and publishing blog posts, with content displayed on a public-facing website.",
+    stats: [
+      { label: "Features", value: "20+" },
+      { label: "Role", value: "Full-Stack Developer" },
+      { label: "Status", value: "Live", accent: true },
+    ],
+    stack: [
+      { layer: "Frontend", tech: "React.js · Zustand · Tailwind CSS" },
+      { layer: "Backend", tech: "Node.js · Express.js · REST APIs" },
+      { layer: "Database", tech: "MySQL" },
+      { layer: "Tools", tech: "Planet Scale · Cloudinary · Vercel" },
+    ],
+    highlights: [
+      "Create, edit, and publish blog posts",
+      "Display published content on the public website",
+      "Like and interact with published posts",
+      "Manage all posts through an admin dashboard",
+    ],
+    links: { demo: "https://devblog-lemon.vercel.app/", github: "https://github.com/DeanBautista/devblog" },
+    images: [
+      { src: devblog_1, alt: "DevBlog overview" },
+      { src: devblog_2, alt: "DevBlog overview" },
+      { src: devblog_3, alt: "DevBlog overview" },
+      { src: devblog_4, alt: "DevBlog overview" },
+      { src: devblog_5, alt: "DevBlog overview" },
+      { src: devblog_6, alt: "DevBlog overview" },
+      { src: devblog_7, alt: "DevBlog overview" },
+      { src: devblog_8, alt: "DevBlog overview" },
+      { src: devblog_9, alt: "DevBlog overview" },
+    ],
+  },
+  {
     slug: "resumatch",
     name: ["Resu", "Match"],
-    tags: ["PHP", "Javascript", "MySQL", "OAuth", "Groq A.I API", "Gemini A.I API", "Puppeteer"],
+    tags: ["PHP", "Javascript", "Tailwind", "MySQL", "OAuth", "Groq A.I API", "Gemini A.I API", "Puppeteer", "REST APIs"],
     description:
       "An AI-powered resume screening tool that scans and compares uploaded resumes/CVs against a job description, scoring the match and generating a downloadable results report.",
     stats: [
       { label: "Features", value: "10+" },
-      { label: "Role", value: "Solo Full-Stack Developer" },
+      { label: "Role", value: "Full-Stack Developer" },
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [
-      { layer: "Frontend", tech: "PHP · HTML · CSS · JavaScript" },
-      { layer: "Backend", tech: "PHP" },
+      { layer: "Frontend", tech: "PHP · HTML · CSS · JavaScript · Tailwind CSS" },
+      { layer: "Backend", tech: "PHP · REST APIs" },
       { layer: "Database", tech: "MySQL" },
       { layer: "AI/Auth", tech: "Groq AI API · Gemini AI API · OAuth" },
       { layer: "Tools", tech: "Puppeteer" },
@@ -171,62 +206,23 @@ export const PROJECTS = [
     ],
   },
   {
-    slug: "devblog",
-    name: ["Dev", "Blog"],
-    tags: ["React.js", "Zustand", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Cloudinary", "JWT Auth", "Planet Scale", "REST APIs"],
-    description:
-      "A personal CMS blog platform with an admin dashboard for creating, managing, and publishing blog posts, with content displayed on a public-facing website.",
-    stats: [
-      { label: "Features", value: "20+" },
-      { label: "Role", value: "Solo Full-Stack Developer" },
-      { label: "Status", value: "Live", accent: true },
-    ],
-    stack: [
-      { layer: "Frontend", tech: "React.js · Zustand · Tailwind CSS" },
-      { layer: "Backend", tech: "Node.js · Express.js" },
-      { layer: "Database", tech: "MySQL" },
-      { layer: "Tools", tech: "Planet Scale · Cloudinary · Vercel" },
-    ],
-    highlights: [
-      "Create, edit, and publish blog posts",
-      "Display published content on the public website",
-      "Like and interact with published posts",
-      "Manage all posts through an admin dashboard",
-    ],
-    links: { demo: "https://devblog-lemon.vercel.app/", github: "https://github.com/DeanBautista/devblog  " },
-    images: [
-      { src: devblog_1, alt: "DevBlog overview" },
-      { src: devblog_2, alt: "DevBlog overview" },
-      { src: devblog_3, alt: "DevBlog overview" },
-      { src: devblog_4, alt: "DevBlog overview" },
-      { src: devblog_5, alt: "DevBlog overview" },
-      { src: devblog_6, alt: "DevBlog overview" },
-      { src: devblog_7, alt: "DevBlog overview" },
-      { src: devblog_8, alt: "DevBlog overview" },
-      { src: devblog_9, alt: "DevBlog overview" },
-    ],
-  },
-  {
     slug: "portfolio",
-    name: ["My", "Portfolio"], // or ["Portfolio"] like Atmos
-    tags: ["React.js", "Tailwind CSS", "Vite", "Framer Motion", "Vercel"], // match your real stack
+    name: ["My", "Portfolio"], 
+    tags: ["React.js", "Tailwind CSS"],
     description:
       "A personal portfolio site showcasing my projects, skills, and experience, built with a focus on smooth animations and responsive design.",
     stats: [
-      // { label: "Timeline", value: "e.g. 2 weeks" },
-      { label: "Role", value: "Solo Developer" },
+      { label: "Role", value: "Developer" },
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [
       { layer: "Frontend", tech: "React.js · Tailwind CSS" },
-      { layer: "Animation", tech: "Framer Motion" }, // if you used it
       { layer: "Tools", tech: "Vite · Vercel" },
     ],
     highlights: [
       "Responsive layout across all screen sizes",
       "Smooth page transitions and scroll animations",
       "Dynamic project showcase pulled from a central data source",
-      "Dark/light mode support", // only if true
     ],
     links: { demo: "https://dpb-dev-seven.vercel.app/", github: "https://github.com/DeanBautista/portfolio" },
     images: [
@@ -237,16 +233,17 @@ export const PROJECTS = [
   {
     slug: "atmos",
     name: ["Atmos"],
-    tags: ["HTML", "CSS", "Javascript", "Vercel", "REST APIs"],
+    tags: ["HTML", "CSS", "Javascript", "REST APIs"],
     description:
       "A responsive weather application that delivers real-time weather data and forecasts using a RESTful weather API.",
     stats: [
-  
-      { label: "Role", value: "Solo Developer" },
+
+      { label: "Role", value: "Developer" },
       { label: "Status", value: "Live", accent: true },
     ],
     stack: [
-      { layer: "Tech Stack", tech: "HTML, CSS, Javascript" },
+      { layer: "Tech Stack", tech: "HTML · CSS · JavaScript" },
+      { layer: "Tools", tech: "REST APIs" },
     ],
     highlights: [
       "Automatic location detection for instant local weather updates",
@@ -256,7 +253,7 @@ export const PROJECTS = [
     ],
     links: { demo: "https://atmos-blond.vercel.app/", github: "https://github.com/DeanBautista/WeatherApp" },
     images: [
-      { src: atmos_1, alt: "CloudVault overview" },
+      { src: atmos_1, alt: "Atmos weather app overview" },
     ],
   },
 ];
