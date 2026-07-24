@@ -32,28 +32,31 @@ export default function Experience() {
       className="bg-[#0a0a0a] px-6 py-20 border-white/10 border-t"
       id="experience"
     >
-      {/* Section heading */}
-      <Reveal>
-        <div className="flex items-baseline gap-3 mb-10">
-          <span
-            className="text-[#a8e63d] font-mono text-xs tracking-widest"
-            aria-hidden="true"
-          >
-            02.
-          </span>
-          <h2
-            className="text-[#f5f0e8] font-black uppercase text-3xl md:text-4xl leading-none tracking-tight"
-            style={{ fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif" }}
-          >
-            Experience
-          </h2>
-        </div>
-      </Reveal>
+      <div className="max-w-7xl mx-auto">
+        {/* Section heading */}
+        <Reveal>
+          <div className="flex items-baseline gap-3 mb-10">
+            <span
+              className="text-[#a8e63d] font-mono text-xs tracking-widest"
+              aria-hidden="true"
+            >
+              02.
+            </span>
+            <h2
+              className="text-[#f5f0e8] font-black uppercase text-3xl md:text-4xl leading-none tracking-tight"
+              style={{ fontFamily: "'Arial Black', 'Helvetica Neue', Arial, sans-serif" }}
+            >
+              Experience
+            </h2>
+          </div>
+        </Reveal>
 
-      {/* Single experience card */}
-      <Reveal delay={90} y={24}>
-        <ExperienceCard experience={EXPERIENCE} />
-      </Reveal>
+        {/* Single experience card */}
+        <Reveal delay={90} y={24}>
+          <ExperienceCard experience={EXPERIENCE} />
+        </Reveal>
+              
+      </div>
     </section>
   );
 }

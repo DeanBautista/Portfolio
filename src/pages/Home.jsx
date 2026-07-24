@@ -33,8 +33,8 @@ export default function Home() {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen">
-      <div className="flex flex-col max-w-[2000px] mx-auto">
-        <Navbar />
+      <Navbar />
+      <div className="flex flex-col mx-auto">
         <Hero />
         <Skills />
         <Experience />
