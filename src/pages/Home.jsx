@@ -6,6 +6,7 @@ import Skills from "../components/home/Skills";
 import Contact from "../components/home/Contact";
 import Footer from "../components/Footer";
 import { saveHomeScroll, getHomeScroll } from "../utils/scrollMemory";
+import Experience from "../components/home/Experience";
 
 export default function Home() {
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Skills />
+        <Experience />
         <Projects />
         <Contact />
         <Footer />

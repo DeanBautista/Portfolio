@@ -97,7 +97,7 @@ export default function Contact() {
       <Reveal>
         <div className="flex items-baseline gap-3 mb-10">
           <span className="text-[#a8e63d] font-mono text-xs tracking-widest" aria-hidden="true">
-            03.
+            04.
           </span>
           <h2
             className="text-[#f5f0e8] font-black text-3xl md:text-4xl leading-none tracking-tight"

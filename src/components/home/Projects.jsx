@@ -17,7 +17,7 @@ export default function Projects() {
             className="text-[#a8e63d] font-mono text-xs tracking-widest"
             aria-hidden="true"
           >
-            02.
+            03.
           </span>
           <h2
             className="text-[#f5f0e8] font-black uppercase text-3xl md:text-4xl leading-none tracking-tight"
@@ -58,9 +58,9 @@ function ProjectRow({ project, index, onClick }) {
       }}
       className="group block border-b border-white/10 px-0 py-8 md:py-10 transition-colors duration-200 hover:bg-white/[0.03] cursor-pointer"
     >
-      <div className="flex items-start justify-between gap-8">
+      <div className="flex flex-col md:flex-row items-start md:justify-between gap-4 md:gap-8">
         {/* Left: number + content */}
-        <div className="flex items-start gap-6 md:gap-10 flex-1 min-w-0">
+        <div className="flex items-start gap-6 md:gap-10 flex-1 min-w-0 w-full">
           <span className="text-[#f5f0e8]/20 font-mono text-xs pt-1 shrink-0 w-6 text-right group-hover:text-[#a8e63d]/60 transition-colors duration-200">
             {num}
           </span>
@@ -89,8 +89,8 @@ function ProjectRow({ project, index, onClick }) {
         </div>
 
         {/* Right: View Project link */}
-        <div className="shrink-0 pt-1 pr-2 flex flex-col justify-between gap-3">
-          <span className="flex justify-end text-[#f5f0e8]/20 group-hover:text-[#a8e63d] font-mono text-xs tracking-wide whitespace-nowrap transition-colors duration-200">
+        <div className="shrink-0 pt-1 pr-2 pl-12 md:pl-0 flex flex-col justify-between gap-3 self-start md:self-auto">
+          <span className="flex justify-start md:justify-end text-[#f5f0e8]/20 group-hover:text-[#a8e63d] font-mono text-xs tracking-wide whitespace-nowrap transition-colors duration-200">
             View Project →
           </span>
         </div>
